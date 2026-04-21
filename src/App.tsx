@@ -13,6 +13,7 @@ import GridPerformance from './sections/GridPerformance';
 import Business from './sections/Business';
 import BoundaryConditions from './sections/BoundaryConditions';
 import JointDevelopment from './sections/JointDevelopment';
+import RiskControl from './sections/RiskControl';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
@@ -70,6 +71,9 @@ function App() {
 
         {/* Joint Development Section - 联合开发模式 */}
         <JointDevelopment />
+
+        {/* Risk Control Section - 风控与担保 */}
+        <RiskControl />
 
         {/* Contact Section - 联系我们 */}
         <Contact />

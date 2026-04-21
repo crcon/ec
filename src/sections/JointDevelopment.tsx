@@ -40,52 +40,61 @@ const stages = [
   {
     id: 1,
     title: '阶段一：项目前期手续完成',
-    payment: '20%',
+    payment: '30%',
+    timing: '协议签订且前期手续完成后 7 个工作日内',
     icon: CheckCircle2,
     conditions: [
-      '项目发改委备案证取得',
-      '项目可行性研究报告完成',
-      '环评、安评、能评等评估报告完成',
-      '设计文件及施工图审查完成',
-      '省电网接入系统方案申请完成',
+      '项目投资协议签订、发改委备案证取得',
+      '项目纳规（如有）、可行性研究报告（含终可研）完成',
+      '省电网接入系统方案及批复取得',
+      '送出线路工程可研报告完成',
+      '项目用地及送出线路工程八大局支持意见',
+      '压覆矿查询、项目用地初勘、选址意见书/红线图',
+      '220kV变电站联合接入协议签署（如涉及）',
     ],
   },
   {
     id: 2,
     title: '阶段二：施工条件具备',
-    payment: '30%',
+    payment: '20%',
+    timing: '达到开工条件、甲方进场施工满 1 个月后 7 个工作日内',
     icon: Settings,
     conditions: [
-      '建设用地出让协议签订',
-      '土地规划许可取得',
-      '建设工程规划许可取得',
-      '项目开工许可证取得',
-      '施工许可证取得',
-      '送出线路相关审批手续完成',
+      '建设用地出让协议签订（含土地证），符合储能项目用地要求',
+      '环评、安评、节能评估、地质灾害、社稳评估、水保方案等完成',
+      '报规报建、电力建设工程安全管理备案',
+      '建设用地规划许可证、建设工程规划许可证取得',
+      '开工许可证、建设工程施工许可证取得',
+      '送出线路工程核准、征地补偿、青赔完成',
+      '设计文件及施工图审查、消防图审合格证',
     ],
   },
   {
     id: 3,
     title: '阶段三：项目竣工并网',
     payment: '20%',
+    timing: '项目竣工验收并完成并网及交易入市后 7 个工作日内',
     icon: CheckCircle2,
     conditions: [
-      '项目竣工验收完成',
-      '并网验收通过',
-      '涉网试验完成',
-      '反送电申请获得批复',
-      '供电合同及售电合同签订',
+      '项目竣工验收完成、取得验收报告',
+      '对侧间隔改造完成、并网验收通过',
+      '电价协议、计量复函取得',
+      '并网调度协议、高压供用电合同、购售电合同签订',
+      '消防验收通过',
+      '现货交易协议、电力交易中心注册入市（取得交易账户及 Ukey）',
+      '中长期交易协议及售电合同签订',
     ],
   },
   {
     id: 4,
     title: '阶段四：正式投产运营',
     payment: '30%',
+    timing: '涉网试验、转商运满 1 个月后 1 个月内',
     icon: TrendingUp,
     conditions: [
-      '电网调度协议签订',
-      '高压供电合同签订',
       '接入系统试运行完成',
+      '涉网试验通过',
+      '项目正式转商运',
       '商运并结算首笔电费',
     ],
   },
@@ -226,12 +235,12 @@ const JointDevelopment = () => {
             <div className="flex flex-wrap items-center justify-center gap-2">
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1.5 bg-white rounded-lg text-sm font-semibold text-[#00b49d]">前期手续</span>
-                <span className="text-xl font-bold text-red-500">20%</span>
+                <span className="text-xl font-bold text-red-500">30%</span>
               </div>
               <ArrowRight className="w-5 h-5 text-gray-400" />
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1.5 bg-white rounded-lg text-sm font-semibold text-[#00b49d]">具备开工</span>
-                <span className="text-xl font-bold text-red-500">30%</span>
+                <span className="text-xl font-bold text-red-500">20%</span>
               </div>
               <ArrowRight className="w-5 h-5 text-gray-400" />
               <div className="flex items-center gap-2">
@@ -245,7 +254,7 @@ const JointDevelopment = () => {
               </div>
             </div>
             <p className="text-center text-sm text-gray-500 mt-4">
-              按里程碑节点验收、分阶段支付开发费的标准化流程
+              按里程碑节点验收、分阶段支付开发费的标准化流程（价款含 6% 增值税；支付前乙方须提供等额合规发票）
             </p>
           </div>
 
@@ -330,6 +339,12 @@ const JointDevelopment = () => {
 
                 {/* Content */}
                 <div className="p-6">
+                  <div className="flex items-center gap-2 mb-4 px-3 py-2 bg-[#e6f7f5] rounded-lg">
+                    <svg className="w-4 h-4 text-[#00b49d] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-xs text-gray-700">{stage.timing}</span>
+                  </div>
                   <h5 className="text-sm font-semibold text-gray-500 mb-4">完成条件</h5>
                   <ul className="space-y-3">
                     {stage.conditions.map((condition, conditionIndex) => (

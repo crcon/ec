@@ -22,13 +22,13 @@ const provinceData = [
   { name: '湖北省', capacity: '0.8GWh', percentage: 22, color: '#007a65' },
   { name: '安徽省', capacity: '0.8GWh', percentage: 22, color: '#005c4b' },
   { name: '天津市', capacity: '0.4GWh', percentage: 11, color: '#004d40' },
-  { name: '江苏省', capacity: '0.32GWh', percentage: 9, color: '#003d33' },
+  { name: '江苏省', capacity: '0.6GWh', percentage: 17, color: '#003d33' },
 ];
 
 const stats = [
   { icon: MapPin, value: '12', label: '服务省份', unit: '个' },
   { icon: Building2, value: '30', label: '储能项目', unit: '个' },
-  { icon: Zap, value: '18.32', label: '总装机容量', unit: 'GWh' },
+  { icon: Zap, value: '18.60', label: '总装机容量', unit: 'GWh' },
 ];
 
 const GridPerformance = () => {

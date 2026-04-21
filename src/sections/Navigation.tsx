@@ -10,6 +10,7 @@ const navLinks = [
   { label: '项目案例', href: '#projects' },
   { label: '并网业绩', href: '#grid-performance' },
   { label: '合作模式', href: '#business' },
+  { label: '风控担保', href: '#risk-control' },
   { label: '联系我们', href: '#contact' },
 ];
 
